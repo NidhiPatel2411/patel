@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.hero{
+	height: 100%;
+	width: 100%;
+	background-image: url(maldives2.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.logo{
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.logo img{
+	width: 80px;
+}
+.sidebar{
+	width: 250px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(300, 255, 255,0.6);
+	position: absolute;
+}
+.text-bar{
+	transform: rotate(-90deg);
+	position: absolute;
+	top: 45%;
+	text-align: center;
+}
+.text-box h1{
+	font-size: 28px;
+	font-weight: 100;
+}
+.text-box h4{
+	margin: 7px 0 10px;
+}
+.line{
+	width: 80px;
+	height: 1px;
+	margin: auto;
+	background: #000;
+}
