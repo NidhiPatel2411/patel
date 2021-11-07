@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <style type="text/css">
+      tr,td{
+        padding: 10px;
+      }
+      .pos{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+
+	<title></title>
+</head>
+<body style="background-color:lightpink;"> 
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" style="background-color: 0000FF;">Maid India</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Catagories <span class="caret"></span></a>
+        <ul class="dropdown-menu" style="background-color: skyblue;">
+
+          <li><a href="#">1-12 HOURS MAID </a></li>
+          <li><a href="#">24 HOURS MAID</a></li>
+          <li><a href="#">MALE SERVENT</a></li>
+          <li><a href="#">COOK HELPER</a></li>
+          <li><a href="#">NANNY BABYCARE</a></li>
+          <li><a href="#">PATIENT CARE</a></li>
+
+      
+        </ul>
+      </li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+
+    </ul>
+    {% if request.session.email %}
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'change_password'%}"><span class="glyphicon glyphicon-edit">
+        </span>Change Password</a></li>
+        <li><a href="{% url 'profile'%}"><img src="{{request.session.image}}"  height="20px"></a></li>
+        <li><a href="{% url 'logout'%}"><span class="glyphicon glyphicon-log-out">
+        </span> Logout({{request.session.fname}})</a></li>
+    {% else %}
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'signup'%}"><span class="glyphicon glyphicon-user">
+        </span> Sign Up</a></li>
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in">
+        </span> Login</a></li>
+    </ul>
+    {% endif %}
+  </div>
+</nav>
+{% block content %}	
+{% endblock %}
+  <!-- <div class="pos"> -->
+  <!-- <nav class="navbar navbar-inverse"> -->
+  <!-- <div class="container-fluid"> -->
+
+    <!-- <ul cl<!-- ass="nav navbar-nav navbar-right"> -->
+      <!-- <li><a href="#"> @Copy Rights - 2021</a> -->
+
+    <!-- </ul> -->
+  </div>
+</nav>
+</div>
+    
+</body>
+	</html>
